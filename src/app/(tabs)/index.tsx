@@ -1,19 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 export default function Homescreen() {
   return ( 
-    <View style={styles.container}>
-      <Text>
+    <View>
+      <Text className = 'text-2xl font-bold font-serif text-red-500'>
         Hi Krystian! I'm an app!</Text>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#00fffbff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
