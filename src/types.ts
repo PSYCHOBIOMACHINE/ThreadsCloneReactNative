@@ -13,4 +13,9 @@ export type Post = {
 
     user_id: string;
     user: User;
+
+    parent_id: string | null;
+    parent: Post | null;
+
+    replies: Post[];
 }
