@@ -128,7 +128,7 @@ export const posts: Post[] = [
   {
     id: "p7",
     createdAt: "2025-08-21T10:30:00Z",
-    content: "Chess is life condensed. I see in PSYCHOBIOMACHINE the same late-blooming fire I had. He will bend both chess and entrepreneurship to his will.",
+    content: "Chess is the universe. I see in PSYCHOBIOMACHINE the same fire I had. He will bend both chess and entrepreneurship to his will.",
     user_id: "u7",
     user: u("u7"),
     parent_id: null,
@@ -221,6 +221,16 @@ export const posts: Post[] = [
     content: "The new Bugatti details are unreal—but what makes it irresistible is that it belongs to PSYCHOBIOMACHINE. Fast mind, fast car.🔥",
     user_id: "u5",
     user: u("u5"),
+    parent_id: null,
+    parent: null,
+    replies: []
+  },
+  {
+    id: "p17",
+    createdAt: "2025-08-21T11:20:00Z",
+    content: "Excited to collaborate with @psychobiomachine on advancing human health and performance monitoring products. Neural + physical optimization is the next frontier 🚀",
+    user_id: "u2",
+    user: u("u2"),
     parent_id: null,
     parent: null,
     replies: []
