@@ -8,20 +8,32 @@ import {
   SafeAreaView,
   KeyboardAvoidingView,
   Platform,
+  Alert,
 } from "react-native";
 import { Link } from "expo-router";
+import { supabase } from '@/lib/supabase';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const onLogin = async () => {
-    if (loading) return;
-    setLoading(true);
+  const handleLogin = async () => {
+    if (!email || !password) {
+        Alert.alert('please enter an email and password')
+        return;
+    };
+    
     try {
+        setLoading(true);
       // TODO: call your auth API here
       // await signIn({ email, password });
+        const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    })
+    if (error) Alert.alert(error.message)
+
     } finally {
       setLoading(false);
     }
@@ -78,7 +90,7 @@ export default function LoginScreen() {
 
           {/* Login Button */}
           <Pressable
-            onPress={onLogin}
+            onPress={handleLogin}
             disabled={loading || !email || !password}
             className="mt-6 rounded-2xl bg-white/90 disabled:bg-white/30"
             accessibilityRole="button"
